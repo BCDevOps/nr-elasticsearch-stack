@@ -4,7 +4,7 @@ import { KinesisStreamHandler } from "./kinesisStreamHandler.isvc";
 import { OpenSearch, OpenSearchBulkResult } from "./opensearch.isvc";
 import * as lodash from 'lodash'
 import { AwsHttpClient, HttpBufferedResponse, HttpRequestOptions, HttpResponseWrapper } from "./aws-http-client.isvc";
-import { APACHE_ACCESS_LOG_EVENT_SIGNATURE } from "./parser.apache.svc";
+import { APACHE_ACCESS_LOG_EVENT_SIGNATURE } from "./apache.parser.svc";
 import { Randomizer } from "./randomizer.isvc";
 import { Logger } from "./logger.isvc";
 import { LoggerVoidImpl } from "./logger-void.svc";

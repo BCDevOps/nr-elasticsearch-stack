@@ -3,7 +3,7 @@ import { TYPES } from "./inversify.types";
 import { GeoIp } from "./geoip.isvc";
 import { Parser } from "./parser.isvc";
 import { GeoIpImpl } from "./geoip.svc";
-import { ParserApacheImpl } from "./parser.apache.svc";
+import { ParserApacheImpl } from "./apache.parser.svc";
 import { OpenSearch } from "./opensearch.isvc";
 import { OpenSearchImpl } from "./opensearch.svc";
 import { KinesisStreamHandlerImpl } from "./kinesisStreamHandler.svc";

@@ -1,7 +1,7 @@
 import { KinesisStreamEvent, KinesisStreamRecord } from "aws-lambda";
 import { create as buildContainer, TYPES } from "./inversify.config";
 import { KinesisStreamHandler } from "./kinesisStreamHandler.isvc";
-import { APACHE_ACCESS_LOG_EVENT_SIGNATURE, ParserApacheImpl } from "./parser.apache.svc";
+import { APACHE_ACCESS_LOG_EVENT_SIGNATURE, ParserApacheImpl } from "./apache.parser.svc";
 import { Randomizer } from "./randomizer.isvc";
 import * as lodash from 'lodash'
 import { ParserApplicationClasification } from "./parser.apps.svc";

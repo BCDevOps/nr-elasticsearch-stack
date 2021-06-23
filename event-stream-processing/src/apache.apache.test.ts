@@ -3,7 +3,7 @@ import { TYPES } from "./inversify.types";
 import { LoggerVoidImpl } from "./logger-void.svc";
 import { Logger } from "./logger.isvc";
 import { LoggerImpl } from "./logger.svc";
-import { ParserApacheImpl, APACHE_ACCESS_LOG_EVENT_SIGNATURE} from "./parser.apache.svc";
+import { ParserApacheImpl, APACHE_ACCESS_LOG_EVENT_SIGNATURE} from "./apache.parser.svc";
 import { Parser } from "./parser.isvc";
 
 const myContainer = new Container();
