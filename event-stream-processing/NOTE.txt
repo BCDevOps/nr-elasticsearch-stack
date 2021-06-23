@@ -1,0 +1,12 @@
+
+npx @bcgov/bcdk cloud aws-login --space=tygsv5-dev --output=~/.aws/credentials.dev.env && source ~/.aws/credentials.dev.env
+
+
+npm ci && npm run pack && npm run clean && rm -rf node_modules
+
+# openssl rand -hex 16
+aws s3api create-bucket --bucket nress-lambda-code-prod-148a62ab607aead4cf48e909528347df --acl private --region ca-central-1 --create-bucket-configuration LocationConstraint=ca-central-1
+aws s3api put-bucket-versioning --bucket nress-lambda-code-prod-148a62ab607aead4cf48e909528347df --versioning-configuration Status=Enabled
+
+npx @bcgov/bcdk cloud aws-login --space=tygsv5-prod --output=~/.aws/credentials.prod.env && source ~/.aws/credentials.prod.env
+aws s3 cp dist/event-stream-processing.zip s3://nress-lambda-code-prod-148a62ab607aead4cf48e909528347df/nress-prod-event-stream-processing.zip && aws s3api list-object-versions --no-cli-pager --no-paginate --bucket nress-lambda-code-prod-148a62ab607aead4cf48e909528347df --prefix nress-prod-event-stream-processing.zip |  jq '.Versions[] | select(.IsLatest ==true) | .VersionId'
