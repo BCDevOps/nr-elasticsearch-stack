@@ -442,7 +442,7 @@ resource "aws_lambda_function" "lambda_iit_agents" {
   role          = aws_iam_role.lambda_iit_agents.arn
   runtime       = "nodejs12.x"
   handler       = "index.kinesisStreamHandler"
-  memory_size   = 1024
+  memory_size   = 3072
   timeout       = 60
   s3_bucket     = data.aws_s3_bucket_object.lambda_stream_processing_code.bucket
   s3_key        = data.aws_s3_bucket_object.lambda_stream_processing_code.key
